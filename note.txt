@@ -1,0 +1,31 @@
+1. knokout.validation---->验证数据是否符合要求
+2. Autocomplete（）---->文本框的自动填充控件  https://jqueryui.com/autocomplete/
+
+3. foudation.js------>前段开源框架，可以快速创建页面原型，移动化方案更出色（即移动设备上的方案） http://foundation.zurb.com/
+http://www.foundcss.com/grid
+http://cncc.bingj.com/cache.aspx?q=Foundationjs&d=4950514064232421&mkt=zh-CN&setlang=es-ES&w=n9nFClI8xi_LO_q1m0j_ebVa7ANM8quI
+
+移动设备上的touch事件
+
+4.angular.js -----》https://angular.cn/docs/ts/latest/guide/setup.html
+http://cache.baiducontent.com/c?m=9d78d513d9d430ad4f99e4697b17c017184381136484944668d4e21bcf311c1f1426f4ba57351073c4c40c3f40b8482cfd803565400137c79adff93bc9fcd27620d26172320b87320fce5cea8e5125b661ca09b4ec5ebbadf045c2f38dce8c4950c852037f84e78b2d53558825&p=8b2a9705879802f012bd9b7d0c1086&newp=987bc64ad4934eac59ebdb3a7f4e8b231610db2151d6d5176b82c825d7331b001c3bbfb423231b05d7c3766005af4b58ebfa347236072ba3dda5c91d9fb4c57479&user=baidu&fm=sc&query=%C0%FB%D3%C3java+%2B+angular%2Ejs%B1%E0%B3%CC&qid=e104c229000b8169&p1=10
+angular.js 的phonecat环境http://wenku.baidu.com/link?url=431OpVoFunAaPJM6E6JfAj7yl-k7SZcAAxn-K-cYOO1tzEKjLjaXLdSkKaRrbVTC3YaUUY4qZCWMaBGFg4wIse6VFvuvuBx89j23YC_2sezA_LyC2Ss1eulqVJ2c2zfO
+http://www.angularjs.net.cn/phonecat/
+
+5.requirejs ----使code模块化
+6.knockoutjs--->实现数据的绑定
+7.node.js------->打包code，和压缩code用http://www.runoob.com/nodejs/nodejs-tutorial.html
+
+8.director.js---->前端路由
+http://cncc.bingj.com/cache.aspx?q=director.js&d=4509829017044527&mkt=zh-CN&setlang=es-ES&w=D6PJGfZqewsC1UWZgU7AhqVDOluqy1ze
+
+9.Fillder
+Fiddler是最强大最好用的Web调试工具之一
+http://cncc.bingj.com/cache.aspx?q=fiddler%E6%98%AF%E5%81%9A%E4%BB%80%E4%B9%88%E7%9A%84&d=4655248006252219&mkt=zh-CN&setlang=es-ES&w=mhp8RX2RF3ZE9k_Ks3t8_pU9OmrbCNFM
+
+10.asp.net http://developer.51cto.com/developer/aspdotnet/
+http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f73260878e482a958448e435061e5a39abfe7d7a0d46cec47b660bac4b56fdf04128715c7ea3de95c81cd2e8d36a38895723706b9140628f4ee9dc4755d650e44d9adc0e97bfe74193&p=c23bc64ad48411a053eace354d00&newp=c2759a4ed1850aef119fc7710f5e92695d0fc20e3cd7d001298ffe0cc4241a1a1a3aecbf26291107d8c3766105ad4a5deef03472370434f1f689df08d2ecce7e69c3677d02&user=baidu&fm=sc&query=asp%2Enet%BF%AA%B7%A2&qid=becf7fe00000ae43&p1=10
+http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed4fece76310408a23454380143bd4815322c3933fc239045c1135a5e83a26140ed9c07e7344f2090ae5a37730200250a09bbf9f4bade7c56e388957230068913261c469aadc3525d621e04d98dc0e97bde74494b9a2a5&p=cb74c64ad49c18ff57ee957e47508d&newp=9c759a46d7c31ae61ff1d52d0214c1231610db2151d7d4166b82c825d7331b001c3bbfb423231b05d0ce7a6d07ab4b5febf43670370327a3dda5c91d9fb4c57479d36e736c5d&user=baidu&fm=sc&query=asp%2Enet%BF%AA%B7%A2%CA%B5%D5%BD&qid=eca2410a0000d03c&p1=2
+
+11. React.js
+http://cncc.bingj.com/cache.aspx?q=reactjs+%E6%95%99%E7%A8%8B&d=4823778205764703&mkt=zh-CN&setlang=es-ES&w=iFlPkbEIMXiRmeEzTQbqaVURhFJDLyWK
