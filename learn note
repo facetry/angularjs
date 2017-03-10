@@ -1,0 +1,63 @@
+ng-app
+ng-controll
+ng-repeat
+ng-bing
+ng-model:在表单项和数据模型之间建立双向绑定
+ng-change:指定控制器方法
+$scope.$watch(watchFn, watchAction, deepWatch)
+watchFn：带有angular表达式或者函数的表达式
+watchAction：函数或者表达式，当watchFn变化时会被调用，如果是函数，会接收watchFn新旧值和作用域对象function(newvalue, oldvalue, scope)
+deepWatch:设置为true,就会检查监控对性的每个属性是否变化
+
+var dereg = $scope.$watch(watchFn, watchAction, deepWatch);
+dereg();
+注册一个监控器，在注销一个监控器
+
+
+二 foucs
+1.There are two ways to bind controller to DOM node:
+(1)use ng-controller
+(2)use rooter to bind controller to Dom templete Fragment which is loaded dynamic
+2. Create Nasted controller
+<div ng-controller = "parentController">
+  <div ng-controller = "childrenController">
+  </div>
+</div>
+parentController中$scope会传入childrenController中，childrenController中的$scope对象可以访问parentController中$scope中的所有属性和函数
+3.显示声明$scope的属性
+(1)表达式声明<input ng-click="count=3"/>,与<input ng-click="changeAmount()"/>效果一样
+(2)用ng-model来声明<input ng-model="count"/>
+function controller($scope){
+  $scope.changeAmount = function(){
+    $scope.count = 3;
+  }
+}
+4. 创建服务来实现应用所特有的功能p37
+5. 过滤器p39
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
