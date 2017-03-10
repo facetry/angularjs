@@ -1,0 +1,72 @@
+
+VS中调出Immediate Window  
+1.View-----Other Windows-----------Command Window
+2.在Command Window中输入immed 就可以调出 Immediate Window
+
+远程连接：qaweb
+mstsc 
+ip： 107.23.22.68
+密码：T0day$123456
+用户名：  augmentum\syi
+
+打开画图工具：mspaint
+获取机器的mac地址：ipconfig\all--->物理地址
+打开控制面板：appwiz.cpl
+远程连接：mstsc 
+VS中调出Immediate Window  
+1.View-----Other Windows-----------Command Window
+2.在Command Window中输入immed 就可以调出 Immediate Window
+
+http://item.jd.com/11611762.html  这本书是C#方面的书，包含的知识很多  不建议直接购买，网上有很多PDF的资源，可以下载下来看 ，建议2-3周要看完前14章。剩余部分可以选择性看
+http://item.jd.com/10951037.html 这本是JavaScript的书，应该和Sophia手里的那本一样。 应该也有PDF的网上资源，可以下载下来看。建议2-3周要看完前14章。剩余部分可以选择性看
+host文件地址: C:\Windows\System32\drivers\etc
+学习网络工程
+https://github.com/jasny/jquery.smartbanner
+
+http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f73260878e482a958448e435061e5a23a4e27a7e4500d4d82f2750f51218bded367034033db49bd58a4bc0bb982a2d8f2d30671cf11b548c47bb8e1b65972fc906b4fe40f0bb806fd4e8c5d2af0c12dd53743cd7afc90453529d78f1642693a48e3c144860befa436f&p=8333c64ad49e1ab408e2977e094288&newp=c3769a4781934eac58e9d5245b0796231610db2151d7d2166b82c825d7331b001c3bbfb423231305d3c7766301af4b56e0f33d72350123a3dda5c91d9fb4c57479df&user=baidu&fm=sc&query=knockoutjs+template%B0%F3%B6%A8&qid=d7e41fc200041c37&p1=1
+---knockoutjs template绑定
+
+http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f7257b8c8148228a8448e435061e5a35a3fd7c734e5392d8272c01ec49038de4732f77552feec795d913cabae27568ce30350044c75612a20ed9cf5153c337912ab0f20ee6cae732e4b9d3a38c0b05dd52753cd7afc90453529d78f16466bff3c214424811cafa3012e8580769c86217f050f890723944c6a19c1a5bc35bc7616080ae45e96959a213d5081e5553a13ca60d203130910867a1533d75&p=9f3edd15d9c041af07f5dd2d021497&newp=c057cf15d9c041af1fbe9b7c424a85231610db2151d2d001298ffe0cc4241a1a1a3aecbf26211300d9cf766303aa425becf230723d0834f1f689df08d2ecce7e68&user=baidu&fm=sc&query=knockoutjs+%D6%D0ko%2EamdTemplateEngine%2EresetRequest%28%28key+%7C%7C+url%29%29&qid=a7d3cfc1000c88a0&p1=2
+---knockoutjs 组件绑定
+
+http://www.cnblogs.com/zhili/category/624221.html
+---WPF
+
+9d78d513d9861af30eb0d1690d67c066684381136f8186423b83cf0ecd3f1a07103ab4fb30226110948522685be90f1efdf1456f2a537eeacedf883d9ce0ce7b388850652d439141658245b28a5b759f7dc54deedb13b0b9f53095acd0d1dc56509b56003897f0fc00464b94
+----window.addEventListener事件流监控事件
+
+http://www.requirejs.cn/
+----requirejs
+
+http://www.runoob.com/w3cnote/requirejs-tutorial-2.html
+----requirejs
+
+http://www.asp.net/web-api/overview/data/using-web-api-with-entity-framework/part-1
+----entity.framwork
+
+http://cache.baiducontent.com/c?m=9d78d513d99006e905b9c72f1a16a6716f5097153ec0a16268a5955f92144c314c7195b030536613a7cf682041f14606acb6746536703daade8dcd5dddccd17f78dc7063671cf1104f8c04fc8b007e907ec747bae85fbaeea36384aea4929907138c0453&p=ce7ac54ad5c34bb340be9b7c555189&newp=8b2a97138f8c09b508e2977e070c8a231610db2151d0da01298ffe0cc4241a1a1a3aecbf26201404d5c1796d06ad4f5ae8f73070340634f1f689df08d2ecce7e79d1687c6a&user=baidu&fm=sc&query=autofac+%D6%D0%CE%C4%B9%D9%CD%F8&qid=b5167cac0001c70b&p1=1
+-------autofac
+
+http://reactjs.cn/react/docs/getting-started.html
+-----react.js
+https://facebook.github.io/react/docs/rendering-elements.html
+-----react.js
+
+http://cache.baiducontent.com/c?m=9d78d513d99000ed4fece4690d61c0676908d7252bd7a1020fd3843995735a315015e0ac54510705a3d20f6416dc3a4beb8068217c5e67f18cc9f85dddcc85295fd9666e3643d85613a30ed9cb5155c037e15bfed81df0bb8025e3dfc5a5de4325cc44737097f1fb4d7013dd1ef6033093b1e838022f11ad9b32728b59636edf7d4fec01bfa2256f749ceb8d0211963dd01640d6f969a73e65e944e20259731ff710b0095b262db30f61a41563538fbd0aa179221e62ab49b8b3cab5eb4e8b&p=8b2a971395dd13c312bd9b7d0d169e&newp=917bc54ad5c341c30be296395c0880231610db2151d7c44324b9d71fd325001c1b69e7ba24231700d0c77d6203ae4259ebf232783c1766dada9fca458ae7c444&user=baidu&fm=sc&query=asp%A1%A3net+%B5%C4%A1%AA%A1%AAlayout%2Ecshtml%D2%B3%C3%E6%BC%D3%D4%D8%B5%C4%CB%B3%D0%F2&qid=cb18770900043a1f&p1=3
+---Rozar 和 layout.cshtml页面的加载顺序问题
+
+http://cache.baiducontent.com/c?m=9d78d513d99256af59fa940f1a60d6716e20971339c0a31f6b93d3169c3e1d070571e2c83a3f554196d27c1041e81501b7a0217240527de88699c9108efbd0357ec97d67305e914164834aee901732c156d111b5e94aadadf045c9e88d8d&p=8a63c64ad49c1eb901bd9b7d0d149c&newp=8b2a970ac78513b11cbd9b7d0d149f231610db2151d4d6176b82c825d7331b001c3bbfb423231202d6c1766202ad4c5eebfa3071370923a3dda5c91d9fb4c57479c736722202c2&user=baidu&fm=sc&query=c%23+%D3%EF%B7%A8&qid=e478997700087046&p1=1
+-----c#语法
+
+closure compiler
+
+http://www.runoob.com/
+
+https://worktile.com/
+
+http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f7237b8b8d482fc3933fc239045c1f25a4ec67690d5c90822b274ab8492aaaa76265377573efc8829f4aaae1d477719c6269304a89124a8053b8ca3632b156872b98b869e6ad8143&p=8b2a9715d9c041ad19bac90c475180&newp=9764c54ad5c343ef09be9b7c610788231610db2151d3d201298ffe0cc4241a1a1a3aecbf26201103d8ce7d6102a9485ce1fb3178310034f1f689df08d2ecce7e6fd9&user=baidu&fm=sc&query=ajax%BD%CC%B3%CC&qid=a7c7857c00022026&p1=2
+
+数据库的MoneyTransferlogs数据库中TABLES中dbo.audit_log查看代码报什么错
+
+http://cache.baiducontent.com/c?m=9d78d513d9d441a94fede5690d67c067694380142bd6a0463892ce5f92140a1c1871e2cb65754e539592682041f14606acb6746536703daade8dcd5dddccca78288b30340740d1070f8059e990177b963d905ce9ac12f0ba8768d5f1&p=9a33cb0194934eac58e7dc2d0214cc&newp=c2769a4796881cff57ee9474150ea5231610db2151d4db136b82c825d7331b001c3bbfb42323130ed0cf7f6d0aae4e58e1f03079370923a3dda5c91d9fb4c57479c86c69&user=baidu&fm=sc&query=%24%28%29%2Eautocompelete&qid=8ceafe820007c1ab&p1=1
+----jquery.autocomplete
