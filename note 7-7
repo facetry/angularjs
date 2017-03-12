@@ -1,3 +1,7 @@
+控制面板-->控制面板的所有服务-->服务：启动数据库
+windown+R-->service.msc
+
+
 
 VS中调出Immediate Window  
 1.View-----Other Windows-----------Command Window
