@@ -1,0 +1,216 @@
+Async....await
+class Program
+    {
+         static void Main(string[] args)
+        {
+            Console.WriteLine("Main start: " + DateTime.Now);
+            int a = 1;
+            waitOrNot();
+            Console.WriteLine("Main middle: " + DateTime.Now);
+            Console.WriteLine("a: " + a);
+            Console.ReadLine();
+            /*
+             *result:
+             * Main start: 2018/5/4 14:17:43
+               waitOrNot start: 2018/5/4 14:17:43
+               async start: 2018/5/4 14:17:43
+               waitOrNot end: 2018/5/4 14:17:43
+               Main middle: 2018/5/4 14:17:43
+               a: 1
+               saync end: 2018/5/4 14:17:53
+             */
+        }
+        private static void waitOrNot()
+        {
+            Console.WriteLine("waitOrNot start: " + DateTime.Now);
+            start();
+            Console.WriteLine("waitOrNot end: " + DateTime.Now);
+        }
+        private static async void start()
+        {
+            Console.WriteLine("async start: " + DateTime.Now);
+            int a = 0;
+            await Task.Run(() =>
+            {
+                Thread.Sleep(1000 * 3);
+                a = getValue();
+            });
+            Console.WriteLine("async end: " + DateTime.Now);
+        }
+        private static int getValue()
+        {
+            return 10;
+        }
+    }
+    
+    class Program
+    {
+         static void Main(string[] args)
+        {
+            Console.WriteLine("Main start: " + DateTime.Now);
+            int a1 = 1;
+            waitOrNot1();
+            Console.WriteLine("Main middle: " + DateTime.Now);
+            Console.WriteLine("a: " + a1);
+            Console.ReadLine();
+            /*
+             * Main start: 2018/5/4 14:19:51
+               waitOrNot start: 2018/5/4 14:19:51
+               async start: 2018/5/4 14:19:51
+               Main middle: 2018/5/4 14:19:51
+               a: 1
+               async end: 2018/5/4 14:19:54
+               waitOrNot end: 2018/5/4 14:19:54
+             */
+
+        }
+
+        private static async void waitOrNot1()
+        {
+            Console.WriteLine("waitOrNot start: " + DateTime.Now);
+            await start1();
+            Console.WriteLine("waitOrNot end: " + DateTime.Now);
+            Console.ReadLine();
+            /*
+             * Main start: 2018/5/4 14:19:51
+               waitOrNot start: 2018/5/4 14:19:51
+               async start: 2018/5/4 14:19:51
+               Main middle: 2018/5/4 14:19:51
+               a: 1
+               async end: 2018/5/4 14:19:54
+               waitOrNot end: 2018/5/4 14:19:54
+             */
+        }
+
+        private static async Task start1()
+        {
+            Console.WriteLine("async start: " + DateTime.Now);
+            int a = 0;
+            await Task.Run(() =>
+            {
+                Thread.Sleep(1000 * 3);
+                a = getValue();
+            });
+            Console.WriteLine("async end: " + DateTime.Now);
+        }
+
+        private static int getValue()
+        {
+            return 10;
+        }
+    }
+    
+    2. BackGroundWoker
+    BackgroundWorker 可以用于启动后台线程。
+
+  主要的事件及参数：
+    1.DoWork——当执行BackgroundWorker.RunWorkerAsync方法时会触发该事件，并且传递DoWorkEventArgs参数;
+
+    2.RunWorkerCompleted——异步操作完成或中途终止会触发该事件。
+    3.CancelAsync and WorkerSupportsCancellation
+      如果需要提前终止执行后台操作，可以调用BackgroundWorker.CancelAsync方法。但是这个方法需要WorkerSupportsCancellation参数的支持，
+      当定义声名BackgroundWork的时候需要将参数WorkerSupportsCancellation设置为true,这样支持异步调用BackgroundWorker.CancelAsync方法。
+    4. CancellationPending
+      在处理DoWork事件的函数中检测BackgroundWorker.CancellationPending属性是否为true，如果是true，则表示用户已经取消了异步调用，
+      同时将DoWorkEventArgs.Cancel属性设为true(传递给处理DoWork事件的函数的第二个参数)，
+      这样当退出异步调用的时候，可以让处理RunWorkerCompleted事件的函数知道是正常退出还是中途退出。
+  
+    5.ProgressChanged——操作处理中获得的处理状态变化，通过BackgroundWorker.ReportProgress(int)方法触发该事件，
+      并且传递ProgressChangedEventArgs,其中包含了处理的百分比,这个参数在UI界面上设置progressbar控件。   
+
+
+   主要的方法：
+          1. BackgroundWorker.RunWorkerAsync——
+            “起动”异步调用的方法有两次重载RunWorkerAsync(),RunWorkerAsync(object argument)，
+            第二个重载提供了一个参数，可以供异步调用使用。（如果有多个参数要传递怎么办，使用一个类来传递他们吧)。调用该方法后会触发DoWork事件，
+            并且为处理DoWork事件的函数传递DoWorkEventArg参数，其中包含了RunWorkerAsync传递的参数。在相应DoWork的处理函数中就可以做具体的复杂操作。
+          2. BackgroundWorker.ReportProgress——
+            需要在一个冗长的操作中向用户不断反馈进度，这样的话就可以调用的ReportProgress(int percent),
+            在调用 ReportProgress 方法时，触发ProgressChanged事件。提供一个在 0 到 100 之间的整数，
+            它表示后台活动已完成的百分比。你也可以提供任何对象作为第二个参数，允许你 给事件处理程序传递状态信息。
+            作为传递到此过程的 ProgressChangedEventArgs 参数属性，百分比和你自己的对象（如果提供的话）均要被传递到 ProgressChanged 事件处理程序。这些属性被分别命名为 ProgressPercentage 和 UserState，并且你的事件处理程序可以以任何需要的方式使用它们。(注意：只有在BackgroundWorker.WorkerReportsProgress属性被设置为true该方法才可用)。
+          3. BackgroundWorker.CancelAsync——
+            但需要退出异步调用的时候，就调用的这个方法。但是样还不够，因为它仅仅是将BackgroudWorker.CancellationPending属性设置为true。
+            你需要在具体的异步调用处理的时候，不断检查BackgroudWorker.CancellationPending是否为true，如果是真的话就退出。
+            (注意：只有在BackgroundWorker.WorkerSupportsCancellation属性被设置为true该方法才可用)。
+
+      BackgroundWorker类中主要用到的有这列属性、方法和事件：
+      重要属性：
+      1、CancellationPending             获取一个值，指示应用程序是否已请求取消后台操作。通过在DoWork事件中判断CancellationPending属性可以认定是否需要取消后台操作（也就是结束线程）；
+      2、IsBusy                          获取一个值，指示 BackgroundWorker 是否正在运行异步操作。程序中使用IsBusy属性用来确定后台操作是否正在使用中；
+      3、WorkerReportsProgress           获取或设置一个值，该值指示BackgroundWorker能否报告进度更新
+      4、WorkerSupportsCancellation      获取或设置一个值，该值指示 BackgroundWorker 是否支持异步取消。设置WorkerSupportsCancellation为true使得程序可以调用CancelAsync方法提交终止挂起的后台操作的请求；
+      重要方法：
+      1、CancelAsync         请求取消挂起的后台操作
+      2、RunWorkerAsync      开始执行后台操作
+      3、ReportProgress      引发ProgressChanged事件  
+      重要事件：
+      1、DoWork              调用 RunWorkerAsync 时发生
+      2、ProgressChanged     调用 ReportProgress 时发生
+      3、RunWorkerCompleted  当后台操作已完成、被取消或引发异常时发生
+      另外还有三个重要的参数是RunWorkerCompletedEventArgs以及DoWorkEventArgs、ProgressChangedEventArgs。
+      BackgroundWorker的各属性、方法、事件的调用机制和顺序：
+
+      从上图可见在整个生活周期内发生了3次重要的参数传递过程：
+        参数传递1：此次的参数传递是将RunWorkerAsync(Object)中的Object传递到DoWork事件的DoWorkEventArgs.Argument,由于在这里只有一个参数可以传递，所以在实际应用往封装一个类，将整个实例化的类作为RunWorkerAsync的Object传递到DoWorkEventArgs.Argument；
+        参数传递2：此次是将程序运行进度传递给ProgressChanged事件，实际使用中往往使用给方法和事件更新进度条或者日志信息；
+        参数传递3：在DoWork事件结束之前，将后台线程产生的结果数据赋给DoWorkEventArgs.Result一边在RunWorkerCompleted事件中调用RunWorkerCompletedEventArgs.Result属性取得后台线程产生的结果。
+        另外从上图可以看到DoWork事件是在后台线程中运行的，所以在该事件中不能够操作用户界面的内容，如果需要更新用户界面，可以使用ProgressChanged事件及RunWorkCompleted事件来实现。
+
+
+     在WinForm中经常遇到一些费时的操作界面，比如统计某个磁盘分区的文件夹或者文件数目，如果分区很大或者文件过多的话，处理不好就会造成“假死”的情况，或者报“线程间操作无效”的异常，为了解决这个问题，可以使用委托来处理，在.net2.0中还可以用BackgroundWorker类。
+
+     BackgroundWorker类是.net 2.0里新增加的一个类，对于需要长时间操作而不需要用户长时间等待的情况可以使用这个类。
+     注意确保在 DoWork 事件处理程序中不操作任何用户界面对象。而应该通过 ProgressChanged 和 RunWorkerCompleted 事件与用户界面进行通信。
+     
+     
+     class Test
+    {
+        public Test()
+        {
+            Thread.CurrentThread.Name = "UI thread";
+            StartBackGroudWorker();
+        }
+        private BackgroundWorker backGroudWorker;
+        private void StartBackGroudWorker()
+        {
+            backGroudWorker = new BackgroundWorker();
+            
+            backGroudWorker.DoWork += new DoWorkEventHandler(DoTestBackgroundWorkMethod);
+            backGroudWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(DoTestBackgroundWorkMethodCompleted);
+            backGroudWorker.WorkerSupportsCancellation = true;
+            if (!backGroudWorker.IsBusy)
+            {
+                backGroudWorker.RunWorkerAsync();
+            }
+        }
+        private void DoTestBackgroundWorkMethod(object sender, DoWorkEventArgs e)
+        {
+            Thread.CurrentThread.Name = "DoTestBackgroundWorkMethod";
+            BackgroundWorker backgroundWorker = sender as BackgroundWorker;
+            e.Result = new object[] { 12, "hello world" };
+            e.Cancel = backgroundWorker.CancellationPending;
+        }
+        private void DoTestBackgroundWorkMethodCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Cancelled)
+            {
+            }
+            else
+            {
+                object[] results = e.Result as object[];
+                foreach (var obj in results)
+                {
+
+                }
+            }
+        }
+    }
+     class Program
+    {
+         static void Main(string[] args)
+        {
+
+            Test test = new Test();
+        }
+    }
