@@ -1,0 +1,15 @@
+1. lock
+lock(obj)
+{
+....
+}
+这个代码块是多线程执行的时候，只允许一个线程进入执行的代码块，lock表达式表示的是：当a线程走到这里的时候，
+调用Monitor.enter（obj）在指定对象上获取排他锁，之后其他线程不能再次获得，其他线程只能等待，代码块运行完，
+会调用Monitor.exit(obj)释放这个对象上的排他锁。
+
+lock(obj)还会调用object.ReferenceEquals(obj, obj)去判断是否申请互斥锁
+
+总结：
+1.lock的是引用类型的对象，string类型除外。
+2.lock推荐的做法是使用静态的、只读的、私有的对象。private static readonly object = new object();
+3.保证lock的对象在外部无法修改才有意义，如果lock的对象在外部改变了(调用object.ReferenceEquals就会返回false)，对其他线程就会畅通无阻，失去了lock的意义。
