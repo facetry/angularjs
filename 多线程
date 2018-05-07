@@ -1,0 +1,22 @@
+1.创建线程
+Thread thread1 = new Thread(new ThreadStart(MethodName));
+    ThreadStart是一个无参的委托
+    启动线程：thread1.Start();
+Thread thread2 =new Thread(new ParameterizedThreadStart(MethodName));
+    ParameterizedThreadStart是一个有参数的委托,参数必须是object类型
+    启动线程：thread2.Start(“aaaa”);
+    
+2.属性名称	            说明
+  CurrentContext	     获取线程正在其中执行的当前上下文。
+  CurrentThread	       获取当前正在运行的线程。
+  ExecutionContext	   获取一个 ExecutionContext 对象，该对象包含有关当前线程的各种上下文的信息。
+  IsAlive	             获取一个值，该值指示当前线程的执行状态。
+  IsBackground	       获取或设置一个值，该值指示某个线程是否为后台线程。
+  IsThreadPoolThread	 获取一个值，该值指示线程是否属于托管线程池。
+  ManagedThreadId	     获取当前托管线程的唯一标识符。
+  Name	               获取或设置线程的名称。
+  Priority	           获取或设置一个值，该值指示线程的调度优先级。
+  ThreadState	         获取一个值，该值包含当前线程的状态。
+ 
+**ManagedThreadId是确认线程的唯一标识符，程序在大部分情况下都是通过Thread.ManagedThreadId来辨别线程的。
+  而Name是一个可变值，在默认时候，Name为一个空值 Null，开发人员可以通过程序设置线程的名称，但这只是一个辅助功能。
