@@ -12,4 +12,12 @@ lock(obj)还会调用object.ReferenceEquals(obj, obj)去判断是否申请互斥
 总结：
 1.lock的是引用类型的对象，string类型除外。
 2.lock推荐的做法是使用静态的、只读的、私有的对象。private static readonly object = new object();
-3.保证lock的对象在外部无法修改才有意义，如果lock的对象在外部改变了(调用object.ReferenceEquals就会返回false)，对其他线程就会畅通无阻，失去了lock的意义。
+3.保证lock的对象在外部无法修改才有意义，如果lock的对象在外部改变了(调用object.ReferenceEquals就会返回false)，对其他线程就会畅通无阻，失去了lock的意义
+
+关键点：
+1. lock(this)的缺点就是在一个线程（例如本例的t1）通过执行该类的某个使用"lock(this)"的方法(例如本例的LockMe())锁定某对象之后,
+   导致整个对象无法被其他线程(例如本例的主线程)访问 - 因为很多人在其他线程(例如本例的主线程)中使用该类的时候会使用类似lock(c1)的代码。
+2. 锁定的不仅仅是lock段里的代码，锁本身也是线程安全的。
+3. 我们应该使用不影响其他操作的私有对象作为locker。
+4. 在使用lock的时候，被lock的对象(locker)一定要是引用类型的，如果是值类型，将导致每次lock的时候都会将该对象装箱为一个新的引用对象
+   (事实上如果使用值类型，C#编译器(3.5.30729.1)在编译时就会给出一个错误)。
